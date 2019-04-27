@@ -1,5 +1,6 @@
+<%@ page import="eu.infoshareacademy.pl.App" %>
 <html>
 <body>
-<h2>Hello World! ISA REST Client</h2>
+<% App.readData(); %>
 </body>
 </html>

@@ -1,31 +1,26 @@
 package eu.infoshareacademy.pl.model;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class RestResponse {
+public class RestResponse implements Serializable {
 
-    @JsonProperty("RestResponse")
-    private RestResponse restResponse;
+    private static final long serialVersionUID = -3717029556158432315L;
+
 
     private List<String> messages;
 
     private List<StateInfo> result;
 
 
-    public RestResponse(RestResponse restResponse, List<String> messages, List<StateInfo> result) {
-        this.restResponse = restResponse;
+    public RestResponse() {
+    }
+
+    public RestResponse(List<String> messages, List<StateInfo> result) {
         this.messages = messages;
         this.result = result;
-    }
-
-    public RestResponse getRestResponse() {
-        return restResponse;
-    }
-
-    public void setRestResponse(RestResponse restResponse) {
-        this.restResponse = restResponse;
     }
 
     public List<String> getMessages() {
